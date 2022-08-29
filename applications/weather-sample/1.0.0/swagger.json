@@ -1,0 +1,56 @@
+{
+    "openapi": "3.0.2",
+    "info": {
+        "title": "HelloWorld",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/weather": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "$ref": "#/components/responses/WeatherForecastResponse"
+                    }
+                },
+                "summary": "This is my weasljehfasd"
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "WeatherForecast": {
+                "description": "",
+                "required": [
+                    "TempC"
+                ],
+                "type": "object",
+                "properties": {
+                    "TempC": {
+                        "format": "float",
+                        "description": "",
+                        "type": "number"
+                    }
+                }
+            }
+        },
+        "responses": {
+            "WeatherForecastResponse": {
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/WeatherForecast"
+                        },
+                        "examples": {
+                            "Example": {
+                                "value": {
+                                    "TempC": 49.33
+                                }
+                            }
+                        }
+                    }
+                },
+                "description": ""
+            }
+        }
+    }
+}
