@@ -1,0 +1,33 @@
+---
+openapi: 3.0.2
+info:
+  title: 'My first '
+  version: 1.0.0
+paths:
+  /books:
+    get:
+      responses:
+        "200":
+          $ref: '#/components/responses/BookResponse'
+components:
+  schemas:
+    Book:
+      description: ""
+      required:
+      - Title
+      type: object
+      properties:
+        Title:
+          description: ""
+          type: string
+  responses:
+    BookResponse:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Book'
+          examples:
+            Exmaple:
+              value:
+                Title: some text
+      description: ""
